@@ -2,7 +2,7 @@
 
 Technical documentation for `LL_Chroma_Plate` - a macro that supports procedural animation and general best practices:  
 
-- Creates a chroma key `Background` node with easy color switching.
+- Creates a `Background` node with easy alpha and chroma color switching.
 - Displays [project pixel dimensions and normalized aspect ratios](../Macro-Reference/Project-Dimensions.md).
 - Displays [composition frames and time expressed multiple ways](../Macro-Reference/Composition-Frames-Time.md).
 
