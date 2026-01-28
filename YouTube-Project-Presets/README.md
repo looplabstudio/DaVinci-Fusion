@@ -1,4 +1,4 @@
-# DaVinci Resolve: Project Settings for YouTube Motion Graphics
+# DaVinci Resolve: Project Presets for YouTube Motion Graphics
 
 A key to great motion graphics is using higher frame rates and project dimensions. This topic covers DaVinci Resolve Project Settings for YouTube. 
 
