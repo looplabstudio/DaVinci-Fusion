@@ -1,4 +1,4 @@
-# DaVinci Resolve Fusion: Angle Property
+# DaVinci Resolve Fusion: Angle and Rotation
 
 If you hail from the land of Adobe, you know each app can have its own idea of how angles work. Whenever I start working with a new app, one of the first things I do is learn how its angles behave. Here are my notes for DaVinci Resolve Fusion.
 
@@ -133,4 +133,35 @@ Point(0.5 + math.cos(math.rad(315)) * time * 0.1, 0.5 + math.sin(math.rad(315)) 
 
 ```
 
+## atan2 Protection
 
+`math.atan2()` is a function that calculates the angle (in radians) from the positive x-axis to a point (x, y).
+
+```
+angle = math.atan2(y, x)
+
+```
+
+In procedural animation, it's common that the `x` and `y` fed to `atan2` are themselves calculations - often deltas or tangents as seen below. 
+
+When both `x` and `y` are zero, `atan2` is technically undefined, which Fusion interprets as zero.
+
+We need to protect against edge cases where both `x` and `y` could both be zero, but 0 degrees is the wrong calculation. 
+
+```lua
+-- Some tangent calculations
+Tool_Name.Fallback_Angle: 90
+Tool_Name.Tangent_X
+Tool_Name.Tangent_Y
+
+-- Converted to degrees
+Tool_Name.Angle
+
+  math.deg(math.atan2(Tangent_Y, Tangent_X)) 
+
+-- And protected with a non-zero fallback angle
+Tool_Name.Road_Lock 
+
+  (Tangent_X == 0 and Tangent_Y == 0) and Fallback_Angle or Angle
+
+```

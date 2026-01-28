@@ -1,6 +1,6 @@
-# Fusion Macro Reference: Node Colors
+# DaVinci Resolve Fusion: Node Colors
 
-A list of Fusion node colors used in `.setting` files.
+A quick grab of Fusion node colors used in `.setting` files.
 
 
 ## Location

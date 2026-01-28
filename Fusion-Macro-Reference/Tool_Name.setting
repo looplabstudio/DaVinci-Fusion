@@ -1,8 +1,3 @@
-# Fusion Macro Reference: Custom Tool Template
-
-A `CustomTool` node template for DaVinci Resolve Fusion.
-
-```lua
 {
 	Tools = ordered() {
 		Tool_Name = Custom {
@@ -10,19 +5,19 @@ A `CustomTool` node template for DaVinci Resolve Fusion.
 			NameSet = true,
 			Inputs = {
 				LUTIn1 = Input {
-					SourceOp = "Tool_NameLUTIn1",
+					SourceOp = "Tool_Name_LUTIn1",
 					Source = "Value",
 				},
 				LUTIn2 = Input {
-					SourceOp = "Tool_NameLUTIn2",
+					SourceOp = "Tool_Name_LUTIn2",
 					Source = "Value",
 				},
 				LUTIn3 = Input {
-					SourceOp = "Tool_NameLUTIn3",
+					SourceOp = "Tool_Name_LUTIn3",
 					Source = "Value",
 				},
 				LUTIn4 = Input {
-					SourceOp = "Tool_NameLUTIn4",
+					SourceOp = "Tool_Name_LUTIn4",
 					Source = "Value",
 				},
 				ShowNumber1 = Input { Value = 0, },
@@ -48,11 +43,11 @@ A `CustomTool` node template for DaVinci Resolve Fusion.
 			ViewInfo = OperatorInfo { Pos = { 770, 16.5 } },
 			UserControls = ordered() {
 
-        -- UserControls go here.
+        		-- UserControls go here.
 
 			}
 		},
-		Tool_NameLUTIn1 = LUTBezier {
+		Tool_Name_LUTIn1 = LUTBezier {
 			KeyColorSplines = {
 				[0] = {
 					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
@@ -62,7 +57,7 @@ A `CustomTool` node template for DaVinci Resolve Fusion.
 			SplineColor = { Red = 255, Green = 255, Blue = 0 },
 			NameSet = true,
 		},
-		Tool_NameLUTIn2 = LUTBezier {
+		Tool_Name_LUTIn2 = LUTBezier {
 			KeyColorSplines = {
 				[0] = {
 					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
@@ -72,7 +67,7 @@ A `CustomTool` node template for DaVinci Resolve Fusion.
 			SplineColor = { Red = 255, Green = 0, Blue = 255 },
 			NameSet = true,
 		},
-		Tool_NameLUTIn3 = LUTBezier {
+		Tool_Name_LUTIn3 = LUTBezier {
 			KeyColorSplines = {
 				[0] = {
 					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
@@ -82,7 +77,7 @@ A `CustomTool` node template for DaVinci Resolve Fusion.
 			SplineColor = { Red = 0, Green = 180, Blue = 255 },
 			NameSet = true,
 		},
-		Tool_NameLUTIn4 = LUTBezier {
+		Tool_Name_LUTIn4 = LUTBezier {
 			KeyColorSplines = {
 				[0] = {
 					[0] = { 0, RH = { 0.333333333333333, 0.333333333333333 }, Flags = { Linear = true } },
@@ -96,5 +91,3 @@ A `CustomTool` node template for DaVinci Resolve Fusion.
 	},
 	ActiveTool = "Tool_Name"
 }
-
-```

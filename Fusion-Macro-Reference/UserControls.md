@@ -1,25 +1,23 @@
-# Fusion Macro Reference: User Controls and Inputs
+# DaVinci Resolve Fusion: InstanceInputs, Inputs, UserControls
 
-A quick grab of the most common user controls and inputs used in DaVinci Resolve Fusion `.setting` files. 
+A quick grab of the most common controls used in `.setting` files. 
 
 
 ## Section Labels
 
 ```lua
 -- InstanceInput
-SectionName = InstanceInput {
+Settings = InstanceInput {
   SourceOp = "Tool_Name",
-  Source = "SectionName",
-  Name = "SectionName",
+  Source = "Settings",
+  Name = "Settings",
   Page = "Controls",
   Default = 0,
 },
-```
 
-```lua
 -- UserControl
-SectionName = {
-  LINKS_Name = "SectionName",
+Settings = {
+  LINKS_Name = "Settings",
   LBLC_NumInputs = 1,
   LINKID_DataType = "Number",
   INPID_InputControl = "LabelControl",
@@ -35,19 +33,17 @@ SectionName = {
 
 ```lua
 -- InstanceInput
-ToggleName = InstanceInput {
+Toggle = InstanceInput {
   SourceOp = "Tool_Name",
-  Source = "ToggleName",
-  Name = "ToggleName",
+  Source = "Toggle",
+  Name = "Toggle",
   Page = "Controls",
   Default = 0,
 },
-```
 
-```lua
 -- UserControl
-ToggleName = {
-  LINKS_Name = "ToggleName",
+Toggle = {
+  LINKS_Name = "Toggle",
   INP_Default = 0,
   { MBTNC_AddButton = "Off" },
   { MBTNC_AddButton = "On" },
@@ -61,23 +57,21 @@ ToggleName = {
 },
 ```
 
-## Number Control
+## Number Input
 
 ```lua
 -- InstanceInput
-Num_Name = InstanceInput {
+Num_Input = InstanceInput {
   SourceOp = "Tool_Name",
-  Source = "Num_Name",
-  Name = "Num_Name",
+  Source = "Num_Input",
+  Name = "Num_Input",
   Page = "Controls",
   Default = 0.0,
 },
-```
 
-```lua
 -- UserControl
-Num_Name = {
-  LINKS_Name = "Num_Name",
+Num_Input = {
+  LINKS_Name = "Num_Input",
   INP_Default = 0.0,
   INP_MinScale = 0.0,
   INP_MaxScale = 1.0,
@@ -90,19 +84,25 @@ Num_Name = {
 },
 ```
 
-## Number Calculation
+## Number Calculation (non-editable)
 
 ```lua
+-- InstanceInput (exposed calc)
+Num_Calc = InstanceInput {
+  SourceOp = "Tool_Name",
+  Source = "Num_Calc",
+  Name = "Num_Calc",
+  Page = "Controls",
+},
+
 -- Input
-Num_Name = Input {
+Num_Calc = Input {
   Expression = "",
 },
-```
 
-```lua
 -- UserControl
-Num_Name = {
-  LINKS_Name = "Num_Name",
+Num_Calc = {
+  LINKS_Name = "Num_Calc",
   LINKID_DataType = "Number",
   INPID_InputControl = "SliderControl",
   INP_External = false,
@@ -111,24 +111,22 @@ Num_Name = {
 },
 ```
 
-## Point Control
+## Point Input
 
 ```lua
 -- InstanceInput
-Point_Name = InstanceInput {
+Point_Input = InstanceInput {
   SourceOp = "Tool_Name",
-  Source = "Point_Name",
-  Name = "Point_Name",
+  Source = "Point_Input",
+  Name = "Point_Input",
   Page = "Controls",
   DefaultX = 0.5,
   DefaultY = 0.5,
 },
-```
 
-```lua
 -- UserControl
-Point_Name = {
-  LINKS_Name = "Point_Name",
+Point_Input = {
+  LINKS_Name = "Point_Input",
   INP_DefaultX = 0.5,
   INP_DefaultY = 0.5,
   LINKID_DataType = "Point",
@@ -137,19 +135,25 @@ Point_Name = {
 },
 ```
 
-## Point Calculation
+## Point Calculation (non-editable)
 
 ```lua
+-- InstanceInput (exposed calc)
+Point_Calc = InstanceInput {
+  SourceOp = "Tool_Name",
+  Source = "Point_Calc",
+  Name = "Point_Calc",
+  Page = "Controls",
+},
+
 -- Input
-Point_Name = Input {
+Point_Calc = Input {
   Expression = "Point()",
 },
-```
 
-```lua
 -- UserControl
-Curve = {
-  LINKS_Name = "Curve",
+Point_Calc = {
+  LINKS_Name = "Point_Calc",
   LINKID_DataType = "Point",
   INPID_InputControl = "OffsetControl",					
   INP_External = false,
@@ -169,9 +173,7 @@ Combo_Name = InstanceInput {
   Page = "Controls",
   Default = 0,
 },
-```
 
-```lua
 -- UserControl
 Combo_Name = {
   LINKS_Name = "Combo_Name",
@@ -183,4 +185,32 @@ Combo_Name = {
   INPID_InputControl = "ComboControl",
   ICS_ControlPage = "Controls",
 },
+```
+
+## Angle Input
+
+```lua
+-- InstanceInput
+Angle = InstanceInput {
+  SourceOp = "Tool_Name",
+  Source = "Angle",
+  Name = "Angle",
+  Page = "Controls",
+  Default = 0,
+},
+
+-- UserControl
+Angle = {
+  LINKS_Name = "Angle",
+  INP_Default = 0,
+  INP_MinScale = 0,
+  INP_MaxScale = 360,
+  INP_MinAllowed = 0,
+  INP_MaxAllowed = 360,
+  LINKID_DataType = "Number",
+  INPID_InputControl = "SliderControl",
+  INP_Integer = true,
+  ICS_ControlPage = "Controls",
+},
+
 ```
