@@ -21,7 +21,7 @@ Fusion compositions often start with a `Background` node that:
 
 
 ```lua
-Tool_Key.Key_Color: 1
+Tool_Key.Plate_Color: 1
 
 0 Transparent: 0 0 0 0 
 1 Green: 0 1 0 1
@@ -37,21 +37,21 @@ Tool_Key.Key_Color: 1
 -- Red (R)
 Tool_Key.Key_Red
 
-  (Key_Color== 4) and 1 or 0
+  (Plate_Color== 4) and 1 or 0
 
 -- Green (G)	
 Tool_Key.Key_Green
 
-  ((Key_Color== 1) or (Key_Color== 4)) and 1 or 0
+  ((Plate_Color== 1) or (Plate_Color== 4)) and 1 or 0
 
 -- Blue (B)	
 Tool_Key.Key_Blue
 
-  ((Key_Color== 2) or (Key_Color== 4)) and 1 or 0
+  ((Plate_Color== 2) or (Plate_Color== 4)) and 1 or 0
 
 -- Alpha (A)	
 Tool_Key.Key_Alpha
 
-  (Key_Color== 0) and 0 or 1
+  (Plate_Color== 0) and 0 or 1
 
 ```
